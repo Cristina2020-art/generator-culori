@@ -1,0 +1,66 @@
+<doctype html>
+<html>
+<head>
+<script>
+function myfunc(){
+var elem = document.getElementById("auth").style.display = "none";
+var btnn = document.getElementById("1").style.display = "grid";
+document.getElementById("change").style.display = "block";
+}
+function timeout(){
+var o = setTimeout(myfunc, 1000);
+var txt = document.getElementById("auth").style.opacity = "0";
+txt.style.transitionDuration = "1s";
+}
+function change(){
+var array = ["0","1","a","b","c","d","e","f","2","3","4","5","6","7","8","9"];
+var b = document.getElementById("body").style.background = "#" + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)];
+var btn = document.getElementById("1").innerHTML = "Color code:"+""+ b;
+}
+function autochange(){
+var h = document.getElementById("1").innerHTML = "currently unavailable";
+var c = document.getElementById("auth").disabled="disabled";
+var array = ["0","1","a","b","c","d","e","f","2","3","4","5","6","7","8","9"];
+var d = document.getElementById("body").style.background = "#" + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)] + array[Math.floor(Math.random() * array.length)];
+}
+function autoe(){
+setInterval(autochange,1000);
+document.getElementById("change").disabled = "disabled";
+}
+</script>
+<style>
+.colorbox {
+outline: none;
+width: 150px;
+height: 150px;
+background: white;
+border: none;
+/*Random color generator*/
+display: none;
+place-items: center;
+box-shadow: 0px 0px 5px grey;
+border-radius: 100%;
+}
+#auth{
+color: tomato;
+animation-play-state: disabled;
+font-size: 25px;
+animation: linear 2s infinite updown;
+}
+#body{
+display: flex;
+background: black;
+justify-content: center;
+align-items: center;
+}
+#change{
+display: none;
+margin-top: 5px;
+width: 100;
+background: white;
+}
+</style>
+<body ondblclick="timeout()" id="body">
+<center id="auth">Random color generator---(double click sa continui)</center>
+<button id="1" class="colorbox" onclick="change()"><span id="1">click ca sa  generezi culori random</span></button>
+<center><button id ="change" onclick="autoe()">SCHIMBA CULOAREA </button>
